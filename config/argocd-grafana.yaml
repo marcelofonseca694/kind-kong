@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://grafana.github.io/helm-charts
-    targetRevision: "6.28.0"
+    targetRevision: "8.11.3"
     chart: grafana
     helm:
       parameters:
@@ -57,7 +57,7 @@ spec:
     namespace: monitoring
   syncPolicy:
     syncOptions:
-      - CreateNamespace=true
+    - CreateNamespace=true
     automated:
       prune: true
       allowEmpty: true

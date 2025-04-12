@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://charts.konghq.com
-    targetRevision: "2.8.0"
+    targetRevision: "2.48.0"
     chart: kong
     helm:
       parameters:
@@ -27,7 +27,7 @@ spec:
     namespace: kong
   syncPolicy:
     syncOptions:
-      - CreateNamespace=true
+    - CreateNamespace=true
     automated:
       prune: true
       allowEmpty: true
