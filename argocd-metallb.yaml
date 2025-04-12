@@ -10,19 +10,13 @@ spec:
     targetRevision: "0.14.9"
     chart: metallb
     helm:
-      values: |
-        configInline:
-          address-pools:
-            - name: default
-              protocol: layer2
-              addresses:
-                - 192.168.49.1 
+      values: "configInline:\n  address-pools:\n    - name: default\n      protocol: layer2\n      addresses:\n        - 172.19.0.1 \n"
   destination:
     server: https://kubernetes.default.svc
     namespace: metallb-system
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true
     automated:
       prune: true
       allowEmpty: true
