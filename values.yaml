@@ -1,0 +1,13 @@
+manager:
+  enabled: true
+  http:
+    enabled: true
+  tls:
+    enabled: false
+
+  ingress:
+    enabled: true
+    hostname: manager.example.com
+    path: /
+    pathType: Prefix
+    ingressClassName: kong
