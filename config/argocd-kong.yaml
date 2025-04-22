@@ -11,23 +11,23 @@ spec:
     chart: kong
     helm:
       parameters:
-      - name: "ingressController.installCRDs"
-        value: "false"
-        forceString: true # ensures that value is treated as a string
+        - name: "ingressController.installCRDs"
+          value: "false"
+          forceString: true # ensures that value is treated as a string
       values: |
         podAnnotations:
           prometheus.io/scrape: "true" # Ask Prometheus to scrape the
           prometheus.io/port: "8100"   # Kong pods for metrics
-        # plugins:
-        #   configMaps:                # change this to 'secrets' if you created a secret
-        #   - name: kong-plugin-myheader
-        #     pluginName: myheader
+        plugins:
+          configMaps:                # change this to 'secrets' if you created a secret
+          - name: kong-plugin-myheader
+            pluginName: myheader
   destination:
     server: https://kubernetes.default.svc
     namespace: kong
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true
     automated:
       prune: true
       allowEmpty: true
