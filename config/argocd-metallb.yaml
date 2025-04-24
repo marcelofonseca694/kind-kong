@@ -16,13 +16,13 @@ spec:
             - name: default
               protocol: layer2
               addresses:
-                - 172.19.0.2 - 172.19.0.5
+                - 172.18.0.2-172.18.0.5
   destination:
     server: https://kubernetes.default.svc
     namespace: metallb-system
   syncPolicy:
     syncOptions:
-      - CreateNamespace=true
+    - CreateNamespace=true
     automated:
       prune: true
       allowEmpty: true
